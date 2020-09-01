@@ -1,0 +1,217 @@
+//Хураськина Елена
+LABA1
+import java.util.Scanner;
+public class Laba1 {
+    public static int fact (int k){
+        int pr=1;
+        for(int i=1;i<=k;i++)
+        {
+            pr=pr*i;
+        }
+        return pr;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] arr=new int[10];
+//1
+      for (int i=0;i<10;i++ )
+        {
+            arr[i]=sc.nextInt();
+        }
+        int sum=0;
+        for (int i=0;i<10;i++)
+        {
+            sum+=arr[i];
+        }
+        System.out.println(sum);
+        int i=0;
+        sum=0;
+        while(i!=10)
+        {
+            sum+=arr[i];
+            i++;
+        }
+        System.out.println(sum);
+        sum=0;
+        i=0;
+        do{
+            sum+=arr[i];
+            i++;
+        }while (i<10);
+        System.out.println(sum);
+
+//2
+
+        for (int j=0;j<args.length;j++)
+        {
+         System.out.println(args[j]);
+         }
+//3
+        double s=0;
+        for (int j=1;j<=10;j++){
+            System.out.println((double)1/j);
+        }
+//4
+
+        System.out.println("Массив:");
+        for (int j=0;j<10;j++)
+        {
+            arr[j]=(int)((int)1+Math.random()*10);
+            System.out.println(arr[j]);
+        }
+        boolean isS=false;
+        int b;
+        while(!isS) {
+            isS = true;
+            for (int j = 0; j < 9; j++)
+                if (arr[j] > arr[j + 1]) {
+                    {
+                        isS=false;
+                        b = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = b;
+                    }
+                }
+        }
+        System.out.println("Отсортированный масив");
+        for (int j=0;j<10;j++)
+        {
+            System.out.println(arr[j]);
+        }
+        //5
+        System.out.println(fact(5));
+    }
+
+}
+
+PRACTICA1
+package ru.mirea.lab1;
+
+/**
+ *
+ * @author student
+ */
+public class Ball {
+    private int radius;
+    private String color;
+    public Ball(){
+        this.radius=0;
+        this.color="";
+}
+   public Ball(int radius, String color)
+   {
+       this.radius=radius;
+       this.color=color;
+   }
+   public void setRadius(int radius){
+       this.radius=radius;
+   }
+   public void setColor(String name){
+       this.color=color;
+   }
+     public int getRadius()
+   {
+       return radius;
+   }
+
+       public String getColor()
+   {
+       return color;
+   }
+         public String to_String() {
+           return radius+" "+ color;
+       }
+}  
+package ru.mirea.lab1;
+
+/**
+ *
+ * @author student
+ */
+public class Book {
+  private String name;
+    private String color;
+    public Book(){
+        this.name="";
+        this.color="";
+}
+   public Book(String name, String color)
+   {
+       this.name=name;
+       this.color=color;
+   }
+   public void setName(int radius){
+       this.name=name;
+   }
+   public void setColor(String name){
+       this.color=color;
+   }
+     public String getName()
+   {
+       return name;
+   }
+       public String getColor()
+   {
+       return color;
+   }
+    public String to_String() {
+           return name +" "+ color;
+       }
+}
+package ru.mirea.lab1;
+public class Dog {
+    private String name;
+    private int age;
+    private String color;
+    public Dog(){
+        this.name="";
+        this.age=0;
+        this.color="";
+}
+   public Dog(String name,int age, String color)
+   {
+       this.name=name;
+       this.age=age;
+       this.color=color;
+   }
+   public void setName(String name){
+       this.name=name;
+   }
+   public void setAge(String name){
+        this.age=age;
+   }
+   public void setColor(String name){
+       this.color=color;
+   }
+   public String getName()
+   {
+       return name;
+   }
+     public int getAge()
+   {
+       return age;
+   }
+       public String getColor()
+   {
+       return color;
+   }
+         public String to_String() {
+           return name+" " + age+" " + color;
+       }
+}package ru.mirea.lab1;
+
+/**
+ *
+ * @author student
+ */
+public class lab1 {
+public static void main(String[] args) {
+    Dog dog= new Dog("Bob", 10, "black");
+    Ball ball=new Ball(10,"black");
+    Book book= new Book("black","Kolobok");
+     System.out.println("Dog: " + dog.to_String());
+     System.out.println("Ball: " + ball.to_String());
+     System.out.println("Book: " + book.to_String());
+     }
+
